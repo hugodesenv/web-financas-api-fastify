@@ -1,12 +1,12 @@
 import fastifyJwt from '@fastify/jwt';
 import { PrismaClient } from '@prisma/client';
 import fastify, { FastifyInstance } from 'fastify';
-import { authenticationRoute } from './modules/account/routes/authenticationRoute';
-import { createPersonRoute } from './modules/person/routes/createRoute';
+import { authenticationRoute } from './modules/account/route/authenticationRoute';
+import { createPersonRoute } from './modules/person/route/createRoute';
 import { authenticationAPIPlugin } from './plugin/authenticationAPIPlugin';
 import { API_CONFIG } from './utils/env';
 import { TAPIResponse } from './utils/types/commonTypes';
-import { createAccountRoute } from './modules/account/routes/createRoute';
+import { createAccountRoute } from './modules/account/route/createRoute';
 
 const server = fastify()
 export const prisma = new PrismaClient();
