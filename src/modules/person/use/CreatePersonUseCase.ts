@@ -1,5 +1,5 @@
 import { TAPIResponse } from "../../../utils/types/commonTypes";
-import { TCreatePersonSchema } from "../type/personType";
+import { TCreatePersonSchema } from "../personType";
 import { PersonRepository } from "../repository/PersonRepository";
 
 export class CreatePersonUseCase {

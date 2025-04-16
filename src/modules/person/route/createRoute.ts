@@ -1,7 +1,7 @@
 import { FastifyInstance, FastifyReply, FastifyRequest } from "fastify";
 import { EnAPIStatusCode, TAPIResponse } from "../../../utils/types/commonTypes";
-import { CreatePersonSchema } from "../schema/personSchemas";
-import { TCreatePersonSchema } from "../type/personType";
+import { CreatePersonSchema } from "../personSchemas";
+import { TCreatePersonSchema } from "../personType";
 import { CreatePersonUseCase } from "../use/CreatePersonUseCase";
 import { PersonRepository } from "../repository/PersonRepository";
 

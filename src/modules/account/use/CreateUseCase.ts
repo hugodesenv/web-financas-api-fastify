@@ -1,5 +1,5 @@
 import { TAPIResponse } from "../../../utils/types/commonTypes";
-import { TCreateAccountSchema } from "../type/accountTypes";
+import { TCreateAccountSchema } from "../accountType";
 import { AccountRepository } from "../repository/AccountRepository";
 
 export class CreateAccountUseCase {

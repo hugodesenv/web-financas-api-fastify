@@ -1,4 +1,4 @@
 import { Static } from "@sinclair/typebox";
-import { CreatePersonSchema } from "../schema/personSchemas";
+import { CreatePersonSchema } from "./personSchemas";
 
 export type TCreatePersonSchema = Static<typeof CreatePersonSchema>;

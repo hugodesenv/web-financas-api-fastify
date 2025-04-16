@@ -1,7 +1,7 @@
 import { FastifyInstance, FastifyReply, FastifyRequest } from "fastify";
 import { EnAPIStatusCode, TAPIResponse } from "../../../utils/types/commonTypes";
-import { AuthenticationAccountSchema } from "../schema/accountSchemas";
-import { TAuthenticationAccountSchema } from "../type/accountTypes";
+import { AuthenticationAccountSchema } from "../accountSchemas";
+import { TAuthenticationAccountSchema } from "../accountType";
 import { AuthenticationUseCase } from "../use/AuthenticationUseCase";
 import { AccountRepository } from "../repository/AccountRepository";
 

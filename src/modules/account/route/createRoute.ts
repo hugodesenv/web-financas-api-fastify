@@ -1,7 +1,7 @@
 import { FastifyInstance, FastifyReply, FastifyRequest } from 'fastify';
 import { TAPIResponse } from '../../../utils/types/commonTypes';
-import { CreateAccountSchema } from '../schema/accountSchemas';
-import { TCreateAccountSchema } from '../type/accountTypes';
+import { CreateAccountSchema } from '../accountSchemas';
+import { TCreateAccountSchema } from '../accountType';
 import { AccountRepository } from '../repository/AccountRepository';
 import { CreateAccountUseCase } from '../use/CreateUseCase';
 
