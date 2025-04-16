@@ -15,7 +15,6 @@ export function createPurposeRoute(app: FastifyInstance) {
     async (req: FastifyRequest<{ Body: TCreatePurposeSchema }>, rep: FastifyReply) => {
       const use = new CreatePurposeUseCase(new PurposeRepository());
       const response = await use.execute(req.body);
-
       return rep.status(response.success ? 200 : 400).send(response);
     }
   );
