@@ -8,7 +8,7 @@ export function checkAndThrow(props: [TAPIResponse]) {
   const [withError] = props.filter(({ success }) => !success);
 
   if (withError) {
-    throw new APIResponseError({ success: false, message: withError.message, status: 400 }).execute();
+    throw new APIResponseError({ success: false, message: withError.message, status: 400 }).toResponse();
   }
 }
 
@@ -17,5 +17,5 @@ class APIResponseError extends Error {
     super(props.message);
   }
 
-  execute = () => this.props;
+  toResponse = () => this.props;
 }
