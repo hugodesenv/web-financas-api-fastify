@@ -1,7 +1,7 @@
 import { FastifyReply, FastifyRequest } from "fastify";
-import { EnAPIStatusCode, TAPIResponse } from "../utils/types/commonTypes";
+import { EnAPIStatusCode, TAPIResponse } from "../utils/commonTypes";
 
-const URL_IGNORE = ['/', '/account/auth'];
+const URL_IGNORE = ["/", "/account/auth"];
 
 export async function authenticationAPIPlugin(request: FastifyRequest, reply: FastifyReply) {
   const { url } = request;
@@ -17,6 +17,6 @@ export async function authenticationAPIPlugin(request: FastifyRequest, reply: Fa
       success: false,
       message: e?.message ?? "Fail to authenticate",
       statusCode: EnAPIStatusCode.UNAUTHORIZED,
-    })
+    });
   }
 }

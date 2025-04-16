@@ -1,4 +1,4 @@
-import { TAPIResponse } from "../../../utils/types/commonTypes";
+import { TAPIResponse } from "../../../utils/commonTypes";
 import { TCreateAccountSchema } from "../accountType";
 import { AccountRepository } from "../repository/AccountRepository";
 

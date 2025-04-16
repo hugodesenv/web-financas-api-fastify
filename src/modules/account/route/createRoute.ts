@@ -1,5 +1,5 @@
 import { FastifyInstance, FastifyReply, FastifyRequest } from 'fastify';
-import { TAPIResponse } from '../../../utils/types/commonTypes';
+import { TAPIResponse } from '../../../utils/commonTypes';
 import { CreateAccountSchema } from '../accountSchemas';
 import { TCreateAccountSchema } from '../accountType';
 import { AccountRepository } from '../repository/AccountRepository';

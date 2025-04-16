@@ -1,4 +1,4 @@
-import { TAPIResponse } from "../../../utils/types/commonTypes";
+import { TAPIResponse } from "../../../utils/commonTypes";
 import { TCreatePersonSchema } from "../personType";
 import { PersonRepository } from "../repository/PersonRepository";
 

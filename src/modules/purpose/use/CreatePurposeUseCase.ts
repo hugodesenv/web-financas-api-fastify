@@ -1,4 +1,4 @@
-import { TAPIResponse } from "../../../utils/types/commonTypes";
+import { TAPIResponse } from "../../../utils/commonTypes";
 import { PurposeRepository } from "../repository/PurposeRepository";
 import { TCreatePurposeSchema } from "../type/purposeType";
 

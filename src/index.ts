@@ -5,9 +5,10 @@ import { authenticationRoute } from "./modules/account/route/authenticationRoute
 import { createPersonRoute } from "./modules/person/route/createRoute";
 import { authenticationAPIPlugin } from "./plugin/authenticationAPIPlugin";
 import { API_CONFIG } from "./utils/env";
-import { TAPIResponse } from "./utils/types/commonTypes";
+import { TAPIResponse } from "./utils/commonTypes";
 import { createAccountRoute } from "./modules/account/route/createRoute";
 import { createPurposeRoute } from "./modules/purpose/route/createRoute";
+import { createEntryRoute } from "./modules/entry/route/createRoute";
 
 const server = fastify();
 export const prisma = new PrismaClient();
@@ -31,6 +32,13 @@ server.register(
     instance.register(createAccountRoute);
   },
   { prefix: "/account" }
+);
+
+server.register(
+  (instance: FastifyInstance) => {
+    instance.register(createEntryRoute);
+  },
+  { prefix: "/entry" }
 );
 
 server.register(
