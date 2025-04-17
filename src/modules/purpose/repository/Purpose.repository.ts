@@ -1,6 +1,6 @@
 import { Prisma } from "@prisma/client";
 import { prisma } from "../../..";
-import { PurposeRepositoryInfra } from "./infra/purposeRepositoryInfra";
+import { PurposeRepositoryInfra } from "./infra/purpose.repository.infra";
 
 export class PurposeRepository implements PurposeRepositoryInfra {
   async create(

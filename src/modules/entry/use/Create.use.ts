@@ -1,9 +1,9 @@
-import { TAPIResponse } from "../../../utils/commonTypes";
-import { checkAndThrow } from "../../../utils/helperUtils";
-import { PersonRepository } from "../../person/repository/PersonRepository";
-import { ValidatePersonUseCase } from "../../person/use/ValidatePersonUseCase";
-import { TCreateEntrySchema } from "../entryType";
-import { EntryRepository } from "../repository/EntryRepository";
+import { TAPIResponse } from "../../../utils/commom.types.utils";
+import { APIResponseError, checkAndThrow } from "../../../utils/helper.utils";
+import { PersonRepository } from "../../person/repository/Person.repository";
+import { ValidatePersonUseCase } from "../../person/use/Validate.case";
+import { TCreateEntrySchema } from "../type/entry.type";
+import { EntryRepository } from "../repository/Entry.repository";
 
 export class CreateEntryUseCase {
   constructor(private readonly repository: EntryRepository) {}
@@ -21,8 +21,6 @@ export class CreateEntryUseCase {
       total: data.total,
     });
 
-    return {
-      success: response.id > 0,
-    };
+    return { success: response.id > 0 };
   }
 }

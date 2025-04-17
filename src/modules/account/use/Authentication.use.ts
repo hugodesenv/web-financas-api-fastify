@@ -1,4 +1,4 @@
-import { AccountRepository } from "../repository/AccountRepository";
+import { AccountRepository } from "../repository/Account.repository";
 
 export class AuthenticationUseCase {
   constructor(

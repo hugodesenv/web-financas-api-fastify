@@ -1,9 +1,9 @@
 import { FastifyInstance, FastifyReply, FastifyRequest } from "fastify";
-import { EnAPIStatusCode, TAPIResponse } from "../../../utils/commonTypes";
-import { AuthenticationAccountSchema } from "../accountSchemas";
-import { TAuthenticationAccountSchema } from "../accountType";
-import { AuthenticationUseCase } from "../use/AuthenticationUseCase";
-import { AccountRepository } from "../repository/AccountRepository";
+import { EnAPIStatusCode, TAPIResponse } from "../../../utils/commom.types.utils";
+import { AuthenticationAccountSchema } from "../schema/account.schemas";
+import { TAuthenticationAccountSchema } from "../type/account.type";
+import { AuthenticationUseCase } from "../use/Authentication.use";
+import { AccountRepository } from "../repository/Account.repository";
 
 export function authenticationRoute(app: FastifyInstance) {
   app.post(

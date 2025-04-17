@@ -1,6 +1,6 @@
-import { TAPIResponse } from "../../../utils/commonTypes";
-import { PurposeRepository } from "../repository/PurposeRepository";
-import { TCreatePurposeSchema } from "../type/purposeType";
+import { TAPIResponse } from "../../../utils/commom.types.utils";
+import { PurposeRepository } from "../repository/Purpose.repository";
+import { TCreatePurposeSchema } from "../type/purpose.type";
 
 export class CreatePurposeUseCase {
   constructor(private readonly repository: PurposeRepository) {}

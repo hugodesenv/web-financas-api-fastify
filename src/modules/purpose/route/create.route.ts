@@ -1,8 +1,8 @@
 import { FastifyInstance, FastifyReply, FastifyRequest } from "fastify";
-import { CreatePurposeSchema } from "../schema/purposeSchema";
-import { CreatePurposeUseCase } from "../use/CreatePurposeUseCase";
-import { PurposeRepository } from "../repository/PurposeRepository";
-import { TCreatePurposeSchema } from "../type/purposeType";
+import { CreatePurposeSchema } from "../schema/create.purpose.schema";
+import { CreatePurposeUseCase } from "../use/Crate.case";
+import { PurposeRepository } from "../repository/Purpose.repository";
+import { TCreatePurposeSchema } from "../type/purpose.type";
 
 export function createPurposeRoute(app: FastifyInstance) {
   app.post(

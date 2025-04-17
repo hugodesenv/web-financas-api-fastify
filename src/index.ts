@@ -1,14 +1,15 @@
 import fastifyJwt from "@fastify/jwt";
 import { PrismaClient } from "@prisma/client";
 import fastify, { FastifyInstance } from "fastify";
-import { authenticationRoute } from "./modules/account/route/authenticationRoute";
-import { createPersonRoute } from "./modules/person/route/createRoute";
-import { authenticationAPIPlugin } from "./plugin/authenticationAPIPlugin";
-import { API_CONFIG } from "./utils/env";
-import { TAPIResponse } from "./utils/commonTypes";
-import { createAccountRoute } from "./modules/account/route/createRoute";
-import { createPurposeRoute } from "./modules/purpose/route/createRoute";
-import { createEntryRoute } from "./modules/entry/route/createRoute";
+import { authenticationRoute } from "./modules/account/route/authentication.route";
+import { createPersonRoute } from "./modules/person/route/create.route";
+import { authenticationAPIPlugin } from "./plugin/authentication.api.plugin";
+import { API_CONFIG } from "./utils/env.utils";
+import { TAPIResponse } from "./utils/commom.types.utils";
+import { createAccountRoute } from "./modules/account/route/create.route";
+import { createPurposeRoute } from "./modules/purpose/route/create.route";
+import { createEntryRoute } from "./modules/entry/route/create.route";
+import { createBankAccountRoute } from "./modules/bank.account/route/create.route";
 
 const server = fastify();
 export const prisma = new PrismaClient();
@@ -33,6 +34,8 @@ server.register(
   },
   { prefix: "/account" }
 );
+
+server.register(createBankAccountRoute, { prefix: "/bank-account" });
 
 server.register(
   (instance: FastifyInstance) => {

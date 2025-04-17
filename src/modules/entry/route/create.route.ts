@@ -1,8 +1,8 @@
 import { FastifyInstance, FastifyReply, FastifyRequest } from "fastify";
-import { CreateEntrySchemas } from "../entrySchemas";
-import { TCreateEntrySchema } from "../entryType";
-import { EntryRepository } from "../repository/EntryRepository";
-import { CreateEntryUseCase } from "./../use/CreateUseCase";
+import { CreateEntrySchemas } from "../schema/create.entry.schemas";
+import { TCreateEntrySchema } from "../type/entry.type";
+import { EntryRepository } from "../repository/Entry.repository";
+import { CreateEntryUseCase } from "../use/Create.use";
 
 export function createEntryRoute(app: FastifyInstance) {
   app.post(

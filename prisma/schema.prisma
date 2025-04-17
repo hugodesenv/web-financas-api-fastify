@@ -48,3 +48,11 @@ model Entry {
   total      Decimal   @default(0) @db.Decimal(15, 7)
   type       EntryType
 }
+
+model Bank_account {
+  id            String   @id @default(uuid()) @db.Uuid
+  description   String   @db.VarChar(40)
+  active        Boolean  @default(false) @db.Boolean()
+  initial_value Decimal  @default(0) @db.Decimal(15, 7)
+  initial_date  DateTime @db.Date()
+}

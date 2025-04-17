@@ -1,5 +1,5 @@
 import { FastifyReply, FastifyRequest } from "fastify";
-import { EnAPIStatusCode, TAPIResponse } from "../utils/commonTypes";
+import { EnAPIStatusCode, TAPIResponse } from "../utils/commom.types.utils";
 
 const URL_IGNORE = ["/", "/account/auth"];
 

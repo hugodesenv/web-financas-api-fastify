@@ -1,9 +1,9 @@
 import { FastifyInstance, FastifyReply, FastifyRequest } from 'fastify';
-import { TAPIResponse } from '../../../utils/commonTypes';
-import { CreateAccountSchema } from '../accountSchemas';
-import { TCreateAccountSchema } from '../accountType';
-import { AccountRepository } from '../repository/AccountRepository';
-import { CreateAccountUseCase } from '../use/CreateUseCase';
+import { TAPIResponse } from '../../../utils/commom.types.utils';
+import { CreateAccountSchema } from '../schema/account.schemas';
+import { TCreateAccountSchema } from '../type/account.type';
+import { AccountRepository } from '../repository/Account.repository';
+import { CreateAccountUseCase } from '../use/Create.use';
 
 export function createAccountRoute(app: FastifyInstance) {
   app.post('/', {

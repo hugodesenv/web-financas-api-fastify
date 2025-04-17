@@ -1,6 +1,6 @@
 import { Prisma } from "@prisma/client";
 import { prisma } from "../../..";
-import { PersonRepositoryInfra } from "./infra/personRepositoryInfra";
+import { PersonRepositoryInfra } from "./infra/person.repository.infra";
 
 export class PersonRepository implements PersonRepositoryInfra {
   async findByID(id: number): Promise<{ name: string; id: number; nickname: string; active: boolean } | null> {

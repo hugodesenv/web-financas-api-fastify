@@ -1,6 +1,6 @@
-import { TAPIResponse } from "../../../utils/commonTypes";
-import { TCreatePersonSchema } from "../personType";
-import { PersonRepository } from "../repository/PersonRepository";
+import { TAPIResponse } from "../../../utils/commom.types.utils";
+import { TCreatePersonSchema } from "../type/person.type";
+import { PersonRepository } from "../repository/Person.repository";
 
 export class CreatePersonUseCase {
   constructor(private readonly repository: PersonRepository) { }

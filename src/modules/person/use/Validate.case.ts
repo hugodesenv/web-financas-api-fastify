@@ -1,5 +1,5 @@
-import { TAPIResponse } from "../../../utils/commonTypes";
-import { PersonRepository } from "../repository/PersonRepository";
+import { TAPIResponse } from "../../../utils/commom.types.utils";
+import { PersonRepository } from "../repository/Person.repository";
 
 export interface IProps {
   id: number;

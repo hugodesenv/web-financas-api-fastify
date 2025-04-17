@@ -1,6 +1,6 @@
 import { Prisma } from "@prisma/client";
 import { prisma } from "../../..";
-import { AccountRepositoryInfra } from "./infra/accountRepositoryInfra";
+import { AccountRepositoryInfra } from "./infra/account.repository.infra";
 
 export class AccountRepository implements AccountRepositoryInfra {
   async create(account: Prisma.AccountCreateInput): Promise<{ id: string; username: string; password: string; active: boolean; }> {

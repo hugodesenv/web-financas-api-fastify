@@ -1,6 +1,6 @@
-import { TAPIResponse } from "../../../utils/commonTypes";
-import { TCreateAccountSchema } from "../accountType";
-import { AccountRepository } from "../repository/AccountRepository";
+import { TAPIResponse } from "../../../utils/commom.types.utils";
+import { TCreateAccountSchema } from "../type/account.type";
+import { AccountRepository } from "../repository/Account.repository";
 
 export class CreateAccountUseCase {
   constructor(private readonly repository: AccountRepository) { }
