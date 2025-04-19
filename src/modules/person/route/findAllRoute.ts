@@ -1,5 +1,5 @@
 import { FastifyInstance, FastifyReply, FastifyRequest } from "fastify";
-import { FindAllPersonUseCase } from "../use/FindAllPersonUseCase";
+import { FindAllPersonUseCase } from "../use/FindAllUseCase";
 import { PersonRepository } from "../repository/PersonRepository";
 import { TAPIResponse } from "../../../utils/commomUtils";
 

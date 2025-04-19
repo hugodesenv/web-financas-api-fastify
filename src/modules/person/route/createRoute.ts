@@ -1,9 +1,9 @@
 import { FastifyInstance, FastifyReply, FastifyRequest } from "fastify";
-import { EnAPIStatusCode, TAPIResponse } from "../../../utils/commomUtils";
+import { EnAPIStatusCode } from "../../../utils/commomUtils";
+import { PersonRepository } from "../repository/PersonRepository";
 import { CreatePersonSchema } from "../schema/personSchemas";
 import { TCreatePersonSchema } from "../type/personType";
-import { CreatePersonUseCase } from "../use/CreatePersonUseCase";
-import { PersonRepository } from "../repository/PersonRepository";
+import { CreatePersonUseCase } from "../use/CreateUseCase";
 
 export function createPersonRoute(app: FastifyInstance) {
   app.post(

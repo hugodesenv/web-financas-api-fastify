@@ -11,6 +11,6 @@ export const CreatePersonSchema = Type.Object({
   })
 });
 
-export const DeletePersonSchema = Type.Object({
+export const PersonIDSchema = Type.Object({
   id: Type.Integer()
 });

@@ -2,7 +2,7 @@ import dayjs from "dayjs";
 import { TAPIResponse } from "../../../utils/commomUtils";
 import { checkAndThrow } from "../../../utils/helperUtils";
 import { PersonRepository } from "../../person/repository/PersonRepository";
-import { ValidatePersonUseCase } from "../../person/use/ValidatePersonUseCase";
+import { ValidatePersonUseCase } from "../../person/use/ValidateUseCase";
 import { PurposeRepository } from "../../purpose/repository/PurposeRepository";
 import { ValidatePurposeUseCase } from "../../purpose/use/ValidadeUseCase";
 import { EntryRepository } from "../repository/EntryRepository";

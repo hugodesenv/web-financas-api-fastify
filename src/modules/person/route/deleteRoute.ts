@@ -1,14 +1,13 @@
 import { FastifyInstance, FastifyReply, FastifyRequest } from "fastify";
-import { DeletePersonSchema } from "../schema/personSchemas";
-import { TDeletePersonSchema } from "../type/personType";
-import { DeletePersonUseCase } from "../use/DeletePersonUseCase";
 import { PersonRepository } from "../repository/PersonRepository";
-import { TAPIResponse } from "../../../utils/commomUtils";
+import { PersonIDSchema } from "../schema/personSchemas";
+import { TDeletePersonSchema } from "../type/personType";
+import { DeletePersonUseCase } from "../use/DeleteUseCase";
 
 export async function deletePersonRoute(app: FastifyInstance) {
   app.delete('/', {
     schema: {
-      querystring: DeletePersonSchema
+      querystring: PersonIDSchema
     }
   }, async (req: FastifyRequest<{ Querystring: TDeletePersonSchema }>, rep: FastifyReply) => {
     const use = new DeletePersonUseCase(new PersonRepository());

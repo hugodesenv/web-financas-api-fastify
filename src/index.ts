@@ -15,6 +15,7 @@ import { findAllPersonRoute } from "./modules/person/route/findAllRoute";
 import cors from '@fastify/cors';
 import { findAllPurposeRoute } from "./modules/purpose/route/finAllRoute";
 import { deletePersonRoute } from "./modules/person/route/deleteRoute";
+import { findByIDPersonRoute } from "./modules/person/route/findByID";
 
 const server = fastify();
 
@@ -65,6 +66,7 @@ server.register((instance: FastifyInstance) => {
   instance.register(createPersonRoute);
   instance.register(findAllPersonRoute);
   instance.register(deletePersonRoute);
+  instance.register(findByIDPersonRoute);
 }, { prefix: "/person" });
 
 // starting
