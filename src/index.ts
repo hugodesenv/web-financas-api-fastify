@@ -1,17 +1,25 @@
 import fastifyJwt from "@fastify/jwt";
 import { PrismaClient } from "@prisma/client";
 import fastify, { FastifyInstance } from "fastify";
-import { authenticationRoute } from "./modules/account/route/authentication.route";
-import { createPersonRoute } from "./modules/person/route/create.route";
-import { authenticationAPIPlugin } from "./plugin/authentication.api.plugin";
-import { API_CONFIG } from "./utils/env.utils";
-import { TAPIResponse } from "./utils/commom.types.utils";
-import { createAccountRoute } from "./modules/account/route/create.route";
-import { createPurposeRoute } from "./modules/purpose/route/create.route";
-import { createEntryRoute } from "./modules/entry/route/create.route";
-import { createBankAccountRoute } from "./modules/bank.account/route/create.route";
+import { authenticationRoute } from "./modules/account/route/authenticationRoute";
+import { createPersonRoute } from "./modules/person/route/createRoute";
+import { authenticationAPIPlugin } from "./plugin/authPlugin";
+import { API_CONFIG } from "./utils/envUtils";
+import { TAPIResponse } from "./utils/commomUtils";
+import { createAccountRoute } from "./modules/account/route/createRoute";
+import { createPurposeRoute } from "./modules/purpose/route/createRoute";
+import { createEntryRoute } from "./modules/entry/route/createRoute";
+import { createBankAccountRoute } from "./modules/bank.account/route/createRoute";
+import { findAllEntryRoute } from "./modules/entry/route/findAllRoute";
+import { findAllPersonRoute } from "./modules/person/route/findAllRoute";
+import cors from '@fastify/cors';
+import { findAllPurposeRoute } from "./modules/purpose/route/finAllRoute";
+import { deletePersonRoute } from "./modules/person/route/deleteRoute";
 
 const server = fastify();
+
+server.register(cors, { origin: true });
+
 export const prisma = new PrismaClient();
 
 // jwt
@@ -40,6 +48,7 @@ server.register(createBankAccountRoute, { prefix: "/bank-account" });
 server.register(
   (instance: FastifyInstance) => {
     instance.register(createEntryRoute);
+    instance.register(findAllEntryRoute);
   },
   { prefix: "/entry" }
 );
@@ -47,14 +56,19 @@ server.register(
 server.register(
   (instance: FastifyInstance) => {
     instance.register(createPurposeRoute);
+    instance.register(findAllPurposeRoute);
   },
-  { prefix: "purpose" }
+  { prefix: "/purpose" }
 );
 
-server.register(createPersonRoute, { prefix: "/person" });
+server.register((instance: FastifyInstance) => {
+  instance.register(createPersonRoute);
+  instance.register(findAllPersonRoute);
+  instance.register(deletePersonRoute);
+}, { prefix: "/person" });
 
 // starting
-server.listen({ port: 8080 }, (err, address) => {
+server.listen({ host: '127.0.0.1', port: 8080 }, (err, address) => {
   if (err) {
     console.error(err);
     process.exit(1);
